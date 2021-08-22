@@ -8,9 +8,11 @@ function Create() {
   const [checkbox, setCheckbox] = useState(false);
 
   const postData = () => {
-    console.log(firstName);
-    console.log(lastName);
-    console.log(checkbox);
+    axios.post(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData`, {
+      firstName,
+      lastName,
+      checkbox,
+    });
   };
 
   return (
