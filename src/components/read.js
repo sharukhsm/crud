@@ -14,13 +14,29 @@ function Read() {
       });
   }, []);
 
-  //Setting data to local storage
+  //Getting and setting data to local storage from the update button below
   const setData = (data) => {
     let { id, firstName, lastName, checkbox } = data;
     localStorage.setItem("ID", id);
     localStorage.setItem("First Name", firstName);
     localStorage.setItem("Last Name", lastName);
     localStorage.setItem("Checkbox Value", checkbox);
+  };
+
+  const onDelete = (id) => {
+    axios
+      .delete(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData/${id}`)
+      .then(() => {
+        getData();
+      });
+  };
+
+  const getData = () => {
+    axios
+      .get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
+      .then((getData) => {
+        setAPIData(getData.data);
+      });
   };
 
   return (
@@ -32,6 +48,7 @@ function Read() {
             <Table.HeaderCell>Last Name</Table.HeaderCell>
             <Table.HeaderCell>Checked</Table.HeaderCell>
             <Table.HeaderCell>Update</Table.HeaderCell>
+            <Table.HeaderCell>Delete</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -50,6 +67,10 @@ function Read() {
                     <Button onClick={() => setData(data)}>Update</Button>
                   </Table.Cell>
                 </Link>
+
+                <Table.Cell>
+                  <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                </Table.Cell>
               </Table.Row>
             );
           })}

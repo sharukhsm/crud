@@ -7,6 +7,7 @@ export default function Update() {
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
 
+  //Updating the data
   const [id, setID] = useState(null);
 
   useEffect(() => {
