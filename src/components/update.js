@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import axios from "axios";
+import { useHistory } from "react-router";
 
 export default function Update() {
+  let history = useHistory();
+  const [id, setID] = useState(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
-
-  //Updating the data
-  const [id, setID] = useState(null);
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));
@@ -18,13 +18,16 @@ export default function Update() {
   }, []);
 
   const updateAPIData = () => {
-    axios.put(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData/${id}`, {
-      firstName,
-      lastName,
-      checkbox,
-    });
+    axios
+      .put(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData/${id}`, {
+        firstName,
+        lastName,
+        checkbox,
+      })
+      .then(() => {
+        history.push("/read");
+      });
   };
-
   return (
     <div>
       <Form className="create-form">
@@ -48,7 +51,7 @@ export default function Update() {
           <Checkbox
             label="I agree to the Terms and Conditions"
             checked={checkbox}
-            onChange={(e) => setCheckbox(!checkbox)}
+            onChange={() => setCheckbox(!checkbox)}
           />
         </Form.Field>
         <Button type="submit" onClick={updateAPIData}>

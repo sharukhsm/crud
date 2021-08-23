@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -23,19 +22,19 @@ function Read() {
     localStorage.setItem("Checkbox Value", checkbox);
   };
 
+  const getData = () => {
+    axios
+      .get(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData`)
+      .then((getData) => {
+        setAPIData(getData.data);
+      });
+  };
+
   const onDelete = (id) => {
     axios
       .delete(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData/${id}`)
       .then(() => {
         getData();
-      });
-  };
-
-  const getData = () => {
-    axios
-      .get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
-      .then((getData) => {
-        setAPIData(getData.data);
       });
   };
 
