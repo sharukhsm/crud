@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function Read() {
   const [APIData, setAPIData] = useState([]);
+  //This function gets data from the api and sets it in a variable.
   useEffect(() => {
     axios
       .get(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData`)
@@ -29,7 +30,7 @@ function Read() {
         setAPIData(getData.data);
       });
   };
-
+  //Delete function
   const onDelete = (id) => {
     axios
       .delete(`https://61222f98f5849d0017fb443a.mockapi.io/fakeData/${id}`)

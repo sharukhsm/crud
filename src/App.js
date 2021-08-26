@@ -8,6 +8,19 @@ function App() {
   return (
     <Router>
       <div className="main">
+        {/* Navbar */}
+        <div class="ui purple three item inverted menu">
+          <a href="/create" class="active item">
+            Create
+          </a>
+          <a href="/read" class="item">
+            Read
+          </a>
+          <a href="/update" class="item">
+            Update
+          </a>
+        </div>
+
         <h2 className="main-header">React Crud Operations</h2>
         <div>
           <Route exact path="/create" component={Create} />
