@@ -1,12 +1,13 @@
 /* Google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 .main-header {
   font-family: "Montserrat", sans-serif;
 }
 
 .main {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   height: 100vh;
   background-color: #212121;

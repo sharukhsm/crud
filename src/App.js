@@ -9,15 +9,15 @@ function App() {
     <Router>
       <div className="main">
         {/* Navbar */}
-        <div class="ui purple three item inverted menu">
+        <div
+          class="ui purple two item inverted menu"
+          style={{ marginTop: 200 }}
+        >
           <a href="/create" class="active item">
             Create
           </a>
           <a href="/read" class="item">
             Read
-          </a>
-          <a href="/update" class="item">
-            Update
           </a>
         </div>
 
@@ -25,7 +25,7 @@ function App() {
         <div>
           <Route exact path="/create" component={Create} />
         </div>
-        <div style={{ marginTop: 20 }}>
+        <div style={{ marginTop: 50 }}>
           <Route exact path="/read" component={Read} />
         </div>
 
