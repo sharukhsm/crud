@@ -13,16 +13,19 @@
     "react-scripts": "4.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
+<<<<<<< HEAD
     "web-vitals": "^1.1.2",
     "homepage": "https://sharukhsm.github.io/crud"
+=======
+    "web-vitals": "^1.1.2"
+>>>>>>> 8cc737524325415117d170b9e0a5cf35d584d473
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +47,7 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
-  }
+  },
+  "keywords": [],
+  "description": "React crud operations using React, React hooks, and Axios"
 }
