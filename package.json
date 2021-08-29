@@ -13,12 +13,7 @@
     "react-scripts": "4.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
-<<<<<<< HEAD
-    "web-vitals": "^1.1.2",
-    "homepage": "https://sharukhsm.github.io/crud"
-=======
     "web-vitals": "^1.1.2"
->>>>>>> 8cc737524325415117d170b9e0a5cf35d584d473
   },
   "scripts": {
     "start": "react-scripts start",
