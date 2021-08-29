@@ -10,13 +10,13 @@ function App() {
       <div className="main">
         {/* Navbar */}
         <div
-          class="ui purple two item inverted menu"
+          className="ui purple two item inverted menu"
           style={{ marginTop: 200 }}
         >
-          <a href="/create" class="active item">
+          <a href="/create" className="active item">
             Create
           </a>
-          <a href="/read" class="item">
+          <a href="/read" className="item">
             Read
           </a>
         </div>
